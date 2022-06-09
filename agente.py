@@ -19,4 +19,6 @@ def Search(objetivo):
     for f in objetivo:
         Lista_objetos.append(f)   
     lista = []
+    for n in objetivo:
+        lista.append(n)
 Search(objetivo)
