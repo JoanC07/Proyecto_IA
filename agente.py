@@ -16,5 +16,4 @@ def Search(objetivo):
     estado = input("Ingrese el estado del " + ubicacion_comedero + ": ")
     Lista_objetos = []
 
-
 Search(objetivo)
