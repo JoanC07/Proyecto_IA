@@ -1,7 +1,13 @@
+'''
+Importamos la libreria matplotlib y networks
 
+'''
 import matplotlib.pyplot as plt
 import networkx as nx
-
+'''
+Codigo semi dinamico, tenemos un diccionario de datos 
+Pasamos de letras a numeros.
+'''
 F = {
     '0' :['1','2','4','7','3','5'],
     '1' :['0','7','15','9'],
@@ -25,7 +31,9 @@ F = {
     '9' :['16','8','10','4']
     
     } 
-
+'''
+Bucles para ordenar nuestro diccionario
+'''
 nueva = []
 for n in  F:
     nueva.append(n)
@@ -36,14 +44,20 @@ for i in nueva:
     llave =(F[i])
     llave.sort()
     llave_nueva.append(llave)
-
+#Diccionario ordenado
 clasificar_diccionario = dict(zip(nueva,llave_nueva))
 print(clasificar_diccionario)
+#Creacion de la clase T mediante la funcion del grafo
 T = nx.Graph(clasificar_diccionario)
+#Graficamos el grafo
 nx.draw_networkx(T)
+#Imprimimos nuestro grafo
 plt.plot
-
+'''
+Importamos Queue
+'''
 from queue import Queue
+
 
 class Grafo:
     def __init__(self, m_numero_nodos, dirigido=True):
@@ -62,18 +76,18 @@ class Grafo:
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
 
     def bfs(self, nodo_de_inicio, nodo_objetivo):
-        # Set of visitado nodos to prevent loops
+
         visitado = set()
         cola = Queue()
     
-        # Add the nodo_de_inicio to the queue and visitado list
+
         cola.put(nodo_de_inicio)
         visitado.add(nodo_de_inicio)
         
-        # nodo_de_inicio has not padres
+
         padre = dict()
         padre[nodo_de_inicio] = None
-         # Perform step 3
+
         camino_encontrado = False
         while not cola.empty():
             nodo_actual = cola.get()
