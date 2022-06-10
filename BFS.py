@@ -60,7 +60,7 @@ class Grafo:
     def Imprimir_lista_adyacencia(self):
         for llave in self.m_lista_adyacencia.keys():
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
-            
+
     def bfs(self, nodo_de_inicio, nodo_objetivo):
         # Set of visitado nodos to prevent loops
         visitado = set()
@@ -73,3 +73,24 @@ class Grafo:
         # nodo_de_inicio has not padres
         padre = dict()
         padre[nodo_de_inicio] = None
+         # Perform step 3
+        camino_encontrado = False
+        while not cola.empty():
+            nodo_actual = cola.get()
+            if nodo_actual == nodo_objetivo:
+                camino_encontrado = True
+                break
+    
+            for (siguiente_nodo, peso) in self.m_lista_adyacencia[nodo_actual]:
+                if siguiente_nodo not in visitado:
+                    cola.put(siguiente_nodo)
+                    padre[siguiente_nodo] = nodo_actual
+                    visitado.add(siguiente_nodo)
+                camino = []
+        if camino_encontrado:
+            camino.append(nodo_objetivo)
+            while padre[nodo_objetivo] is not None:
+                camino.append(padre[nodo_objetivo]) 
+                nodo_objetivo = padre[nodo_objetivo]
+            camino.reverse()
+        return camino 
