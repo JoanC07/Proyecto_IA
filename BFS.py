@@ -50,3 +50,13 @@ class Grafo:
         self.m_m_numero_nodos = m_numero_nodos 
         self.m_nodos = range(self.m_m_numero_nodos) 
         self.m_dirigido = dirigido
+        self.m_lista_adyacencia = {nodo: set() for nodo in self.m_nodos}      
+	
+    def agregar_borde(self, nodo1, nodo2, peso=1):
+        self.m_lista_adyacencia[nodo1].add((nodo2, peso))
+
+        if not self.m_dirigido:
+            self.m_lista_adyacencia[nodo2].add((nodo1, peso))
+    def Imprimir_lista_adyacencia(self):
+        for llave in self.m_lista_adyacencia.keys():
+            print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
