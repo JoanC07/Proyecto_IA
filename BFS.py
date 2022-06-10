@@ -174,109 +174,110 @@ class Grafo:
                 nodo_objetivo = padre[nodo_objetivo]
             camino.reverse()
         return camino
-A = 1
+"""A = 1
 B = 6
 
-def grafo_(A,B):
+def grafo_(A,B): """
 #Creacion del grafo
-    grafo = Grafo(20, dirigido=False)
-    # Nodo 1
-    grafo.agregar_borde(0, 1)
-    grafo.agregar_borde(0, 2)
-    grafo.agregar_borde(0, 3)
-    grafo.agregar_borde(0, 4)
-    grafo.agregar_borde(0, 5)
-    grafo.agregar_borde(0, 7)
-    # Nodo 2
-    grafo.agregar_borde(1, 0)
-    grafo.agregar_borde(1, 7)
-    grafo.agregar_borde(1, 9)
-    grafo.agregar_borde(1, 15)
-    #Nodo 3
-    grafo.agregar_borde(2, 0)
-    grafo.agregar_borde(2, 5)
-    grafo.agregar_borde(2, 6)
-    grafo.agregar_borde(2, 14)
-    #Nodo 4
-    grafo.agregar_borde(3, 0)
-    grafo.agregar_borde(3, 7)
-    grafo.agregar_borde(3, 14)
-    #Nodo 5
-    grafo.agregar_borde(4, 0)
-    grafo.agregar_borde(4, 5)
-    grafo.agregar_borde(4, 9)
-    grafo.agregar_borde(4, 10)
-    grafo.agregar_borde(4, 11)
-    grafo.agregar_borde(4, 19)
-    #Nodo 6
-    grafo.agregar_borde(5, 0)
-    grafo.agregar_borde(5, 2)
-    grafo.agregar_borde(5, 4)
-    grafo.agregar_borde(5, 12)
-    #Nodo 7
-    grafo.agregar_borde(6, 2)
-    grafo.agregar_borde(6, 13)
-    #Nodo 8
-    grafo.agregar_borde(7, 0)
-    grafo.agregar_borde(7, 1)
-    grafo.agregar_borde(7, 3)
-    grafo.agregar_borde(7, 15)
-    #Nodo 9
-    grafo.agregar_borde(8, 9)
-    grafo.agregar_borde(8, 15)
-    grafo.agregar_borde(8, 16)
-    #Nodo 10
-    grafo.agregar_borde(9, 4)
-    grafo.agregar_borde(9, 8)
-    grafo.agregar_borde(9, 10)
-    grafo.agregar_borde(9, 16)
-    #Nodo 11
-    grafo.agregar_borde(10,4)
-    grafo.agregar_borde(10,9) 
-    grafo.agregar_borde(10,11)
-    grafo.agregar_borde(10,18)
-    #Nodo 12
-    grafo.agregar_borde(11,4)
-    grafo.agregar_borde(11,10) 
-    #Nodo 13
-    grafo.agregar_borde(12,5)
-    grafo.agregar_borde(12,13) 
-    grafo.agregar_borde(12,19)
-    #Nodo 14
-    grafo.agregar_borde(13,6)
-    grafo.agregar_borde(13,12) 
-    #Nodo 15
-    grafo.agregar_borde(14,2)
-    grafo.agregar_borde(14,3) 
-    #Nodo 16
-    grafo.agregar_borde(15,1)
-    grafo.agregar_borde(15,7) 
-    grafo.agregar_borde(15,8)
-    #Nodo 17
-    grafo.agregar_borde(16,8)
-    grafo.agregar_borde(16,9) 
-    grafo.agregar_borde(16,17)
-    #Nodo 18
-    grafo.agregar_borde(17,16)
-    grafo.agregar_borde(17,18)
-    #Nodo 19 
-    grafo.agregar_borde(18,10) 
-    grafo.agregar_borde(18,17)
-    #Nodo 20
-    grafo.agregar_borde(19,4) 
-    grafo.agregar_borde(19,12)  
-    #Imprime nuestra lista de adyacencia
-    grafo.Imprimir_lista_adyacencia()
-    #Ingreso de los nodos a llegar
-    #A = int(input('Escriba el Nodo Incial: '))
-    #B = int(input('Escriba el Nodo Final: '))
+grafo = Grafo(20, dirigido=False)
+# Nodo 1
+grafo.agregar_borde(0, 1)
+grafo.agregar_borde(0, 2)
+grafo.agregar_borde(0, 3)
+grafo.agregar_borde(0, 4)
+grafo.agregar_borde(0, 5)
+grafo.agregar_borde(0, 7)
+# Nodo 2
+grafo.agregar_borde(1, 0)
+grafo.agregar_borde(1, 7)
+grafo.agregar_borde(1, 9)
+grafo.agregar_borde(1, 15)
+#Nodo 3
+grafo.agregar_borde(2, 0)
+grafo.agregar_borde(2, 5)
+grafo.agregar_borde(2, 6)
+grafo.agregar_borde(2, 14)
+#Nodo 4
+grafo.agregar_borde(3, 0)
+grafo.agregar_borde(3, 7)
+grafo.agregar_borde(3, 14)
+#Nodo 5
+grafo.agregar_borde(4, 0)
+grafo.agregar_borde(4, 5)
+grafo.agregar_borde(4, 9)
+grafo.agregar_borde(4, 10)
+grafo.agregar_borde(4, 11)
+grafo.agregar_borde(4, 19)
+#Nodo 6
+grafo.agregar_borde(5, 0)
+grafo.agregar_borde(5, 2)
+grafo.agregar_borde(5, 4)
+grafo.agregar_borde(5, 12)
+#Nodo 7
+grafo.agregar_borde(6, 2)
+grafo.agregar_borde(6, 13)
+#Nodo 8
+grafo.agregar_borde(7, 0)
+grafo.agregar_borde(7, 1)
+grafo.agregar_borde(7, 3)
+grafo.agregar_borde(7, 15)
+#Nodo 9
+grafo.agregar_borde(8, 9)
+grafo.agregar_borde(8, 15)
+grafo.agregar_borde(8, 16)
+#Nodo 10
+grafo.agregar_borde(9, 4)
+grafo.agregar_borde(9, 8)
+grafo.agregar_borde(9, 10)
+grafo.agregar_borde(9, 16)
+#Nodo 11
+grafo.agregar_borde(10,4)
+grafo.agregar_borde(10,9) 
+grafo.agregar_borde(10,11)
+grafo.agregar_borde(10,18)
+#Nodo 12
+grafo.agregar_borde(11,4)
+grafo.agregar_borde(11,10) 
+#Nodo 13
+grafo.agregar_borde(12,5)
+grafo.agregar_borde(12,13) 
+grafo.agregar_borde(12,19)
+#Nodo 14
+grafo.agregar_borde(13,6)
+grafo.agregar_borde(13,12) 
+#Nodo 15
+grafo.agregar_borde(14,2)
+grafo.agregar_borde(14,3) 
+#Nodo 16
+grafo.agregar_borde(15,1)
+grafo.agregar_borde(15,7) 
+grafo.agregar_borde(15,8)
+#Nodo 17
+grafo.agregar_borde(16,8)
+grafo.agregar_borde(16,9) 
+grafo.agregar_borde(16,17)
+#Nodo 18
+grafo.agregar_borde(17,16)
+grafo.agregar_borde(17,18)
+#Nodo 19 
+grafo.agregar_borde(18,10) 
+grafo.agregar_borde(18,17)
+#Nodo 20
+grafo.agregar_borde(19,4) 
+grafo.agregar_borde(19,12)  
+#Imprime nuestra lista de adyacencia
 
-    camino = grafo.bfs(A,B)
-    #Nos imprime la ruta mas corta
-    print(f'el camino mas  corto de {A} hacia {B} es : ')
-    print(camino)
-    return(camino)
+#grafo.Imprimir_lista_adyacencia()
+#Ingreso de los nodos a llegar
+A = int(input('Escriba el Nodo Incial: '))
+B = int(input('Escriba el Nodo Final: '))
 
-if __name__ =="__main__":
+camino = grafo.bfs(A,B)
+#Nos imprime la ruta mas corta
+print(f'el camino mas  corto de {A} hacia {B} es : ')
+print(camino)
+#return(camino)
+
+#if __name__ =="__main__":
     
-    grafo_(A,B) 
+    #grafo_(A,B) '''
