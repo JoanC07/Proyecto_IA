@@ -42,3 +42,11 @@ print(clasificar_diccionario)
 T = nx.Graph(clasificar_diccionario)
 nx.draw_networkx(T)
 plt.plot
+
+from queue import Queue
+
+class Grafo:
+    def __init__(self, m_numero_nodos, dirigido=True):
+        self.m_m_numero_nodos = m_numero_nodos 
+        self.m_nodos = range(self.m_m_numero_nodos) 
+        self.m_dirigido = dirigido
