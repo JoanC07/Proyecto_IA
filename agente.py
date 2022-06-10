@@ -17,10 +17,10 @@ def  Buscar(objetivo):
     lista = []
     for n in objetivo:
         lista.append(n) 
-        for n in lista:
-            if Animal ==n:
-                nueva_lista = lista
-                nueva_lista.remove(n)
+    for n in lista:
+        if Animal ==n:
+            nueva_lista = lista
+            nueva_lista.remove(n)
             lista_estados=[] 
             print("Objetivo:" + str(objetivo))
             for t in nueva_lista:
@@ -31,33 +31,34 @@ def  Buscar(objetivo):
             print(f"--------- Evaluacion de alimentacion de {n}------")   
             if estado == '0':
                 print(f'{n} Alimentados ')
-                for animales in nueva_lista:
-                    if  nuevo_diccionario[animales]== '1':
-                        print(f"Los {animales} No tienen comida")
-                        print(f"Se alimentará {animales}")
+                for animal in lista_nueva:
+                    if  nuevo_diccionario[animal]== '1':
+                        print(f"Los {animal} No tienen comida")
+                        print(f"Se alimentará {animal}")
                         costo += 1 #
                         print("El costo actual es: " +str(costo))
-                        objetivo[animales] ='0' 
+                        objetivo[animal] ='0' 
                         costo += 1 
-                        print(f"se ha vuelto a verificar la comida de {animales}")
+                        print(f"se ha vuelto a verificar la comida de {animal}")
                         print("El costo actual es: "  +str(costo)) 
                     else: 
-                        print(f"Los {animales} tienen comida")
-                        print(f"{animales} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo))
+                        print(f"Los {animal} tienen comida")
+                        print(f"{animal} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo))
             elif estado == '1':
                 print(f'{n} NO Alimentados ')
-                for animales in nueva_lista:     
-                    if  nuevo_diccionario[animales]== '1':
-                        print(f"Los {animales} No tienen comida")
-                        print(f"Se alimentará {animales}") 
+                for animal in lista_nueva:     
+                    if  nuevo_diccionario[animal]== '1':
+                        print(f"Los {animal} No tienen comida")
+                        print(f"Se alimentará {animal}") 
                         print("El costo actual es: " +str(costo))                   
-                        objetivo[animales] ='0' 
+                        objetivo[animal] ='0' 
                         costo += 1 
-                        print(f"se ha vuelto a verificar la comida de {animales}")
+                        print(f"se ha vuelto a verificar la comida de {animal}")
                         print("El costo actual es: "  +str(costo))
                     else:  
-                        print(f"Los {animales} tienen comida")
-                        print(f"{animales} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo)) #Costo se mantiene  
+                        print(f"Los {animal} tienen comida")
+                        print(f"{animal} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo)) #Costo se mantiene  
             else:
                 print(f'{n} No alimentados ')
+Buscar(objetivo)
                        
