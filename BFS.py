@@ -187,12 +187,25 @@ class Grafo:
                     #Se marca el nodo
                     visitado.add(siguiente_nodo)
         #Camino de construccion
+        '''
+        Se añade el nodos a nuestro camino
+        Nodo se debe encontrar en la lista padre y que no este marcado.
+        '''
         camino = []
         if camino_encontrado:
             camino.append(nodo_objetivo)
+            '''
+            Se agrega a la lista padre o ruta de los elementos que se encuentran
+            dentro de la lista padre y nuestro nodo objetivo.
+
+            '''
             while padre[nodo_objetivo] is not None:
                 camino.append(padre[nodo_objetivo]) 
                 nodo_objetivo = padre[nodo_objetivo]
+                '''
+                Invierte el orden de la lista padre para dejar el ultimo valor 
+                al inicio  y el primero al ultimo
+                '''
             camino.reverse()
         return camino
 """A = 1
