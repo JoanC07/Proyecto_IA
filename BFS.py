@@ -94,3 +94,4 @@ class Grafo:
                 nodo_objetivo = padre[nodo_objetivo]
             camino.reverse()
         return camino 
+grafo = Grafo(20, dirigido=False)
