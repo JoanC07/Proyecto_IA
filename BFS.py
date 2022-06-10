@@ -180,3 +180,14 @@ grafo.agregar_borde(18,17)
 #Nodo 20
 grafo.agregar_borde(19,4) 
 grafo.agregar_borde(19,12)  
+
+grafo.Imprimir_lista_adyacencia()
+
+
+A = int(input('Escriba el Nodo Incial: '))
+
+B = int(input('Escriba el Nodo Final: '))
+camino = grafo.bfs(A,B)
+
+print(f'el camino mas  corto de {A} hacia {B} es : ')
+print(camino)
