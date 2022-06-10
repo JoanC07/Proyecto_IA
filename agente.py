@@ -17,3 +17,14 @@ def  Buscar(objetivo):
     lista = []
     for n in objetivo:
         lista.append(n) 
+        for n in lista:
+            if Animal ==n:
+                nueva_lista = lista
+                nueva_lista.remove(n)
+            lista_estados=[] 
+            print("Objetivo:" + str(objetivo))
+            for t in nueva_lista:
+                t=input(f'Ingrese el estado de {t}: ')
+                lista_estados.append(t) 
+                lista_nueva = [str(Animal)] +nueva_lista 
+                nuevo_diccionario = dict(zip(lista_nueva, [str(estado)] + lista_estados))
