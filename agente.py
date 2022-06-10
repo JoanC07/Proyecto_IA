@@ -41,3 +41,23 @@ def  Buscar(objetivo):
                         costo += 1 
                         print(f"se ha vuelto a verificar la comida de {animales}")
                         print("El costo actual es: "  +str(costo)) 
+                    else: 
+                        print(f"Los {animales} tienen comida")
+                        print(f"{animales} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo))
+            elif estado == '1':
+                print(f'{n} NO Alimentados ')
+                for animales in nueva_lista:     
+                    if  nuevo_diccionario[animales]== '1':
+                        print(f"Los {animales} No tienen comida")
+                        print(f"Se alimentará {animales}") 
+                        print("El costo actual es: " +str(costo))                   
+                        objetivo[animales] ='0' 
+                        costo += 1 
+                        print(f"se ha vuelto a verificar la comida de {animales}")
+                        print("El costo actual es: "  +str(costo))
+                    else:  
+                        print(f"Los {animales} tienen comida")
+                        print(f"{animales} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo)) #Costo se mantiene  
+            else:
+                print(f'{n} No alimentados ')
+                       
