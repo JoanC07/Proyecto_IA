@@ -100,7 +100,7 @@ def  Buscar(objetivo):
                     if  nuevo_diccionario[animal]== '1':
                         print(f"Los {animal} No tienen comida")
                         print(f"Se alimentará {animal}")
-                        costo += 1 #
+                        costo += 1 
                         print("El costo actual es: " +str(costo))
                         objetivo[animal] ='0' 
                         costo += 1 
@@ -115,6 +115,7 @@ def  Buscar(objetivo):
                     if  nuevo_diccionario[animal]== '1':
                         print(f"Los {animal} No tienen comida")
                         print(f"Se alimentará {animal}") 
+                        costo += 1 
                         print("El costo actual es: " +str(costo))                   
                         objetivo[animal] ='0' 
                         costo += 1 
