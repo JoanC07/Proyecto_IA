@@ -60,3 +60,16 @@ class Grafo:
     def Imprimir_lista_adyacencia(self):
         for llave in self.m_lista_adyacencia.keys():
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
+            
+    def bfs(self, nodo_de_inicio, nodo_objetivo):
+        # Set of visitado nodos to prevent loops
+        visitado = set()
+        cola = Queue()
+    
+        # Add the nodo_de_inicio to the queue and visitado list
+        cola.put(nodo_de_inicio)
+        visitado.add(nodo_de_inicio)
+        
+        # nodo_de_inicio has not padres
+        padre = dict()
+        padre[nodo_de_inicio] = None
