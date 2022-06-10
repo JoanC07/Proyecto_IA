@@ -28,3 +28,16 @@ def  Buscar(objetivo):
                 lista_estados.append(t) 
                 lista_nueva = [str(Animal)] +nueva_lista 
                 nuevo_diccionario = dict(zip(lista_nueva, [str(estado)] + lista_estados))
+            print(f"--------- Evaluacion de alimentacion de {n}------")   
+            if estado == '0':
+                print(f'{n} Alimentados ')
+                for animales in nueva_lista:
+                    if  nuevo_diccionario[animales]== '1':
+                        print(f"Los {animales} No tienen comida")
+                        print(f"Se alimentará {animales}")
+                        costo += 1 #
+                        print("El costo actual es: " +str(costo))
+                        objetivo[animales] ='0' 
+                        costo += 1 
+                        print(f"se ha vuelto a verificar la comida de {animales}")
+                        print("El costo actual es: "  +str(costo)) 
