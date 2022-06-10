@@ -1,7 +1,7 @@
 '''
 Importamos las librerias 
 matplotlib la cual nos permitirá graficar nuestro grafo a partir de nuestro diccionario de datos
-y networks
+y networks.
 
 '''
 import matplotlib.pyplot as plt
@@ -18,18 +18,18 @@ F = {
     '4' :['0','5','19','11','10','9'],
     '5' :['0','2','12','4'],
     '6' :['2','13'],
-    '7' : ['3','0','1','15'],
-    '8' : ['15','9','16'],
-    '10' : ['4','9','11','18'],
-    '11' : ['4','10'],
-    '12' : ['5','19','13'],
-    '13' : ['6','12'],
-    '14' : ['3','2'],
-    '15' : ['8','7','1'],
-    '16' : ['8','9','17'],
-    '17' : ['16','18'],
-    '18' : ['10','17'],
-    '19' : ['12','4'],
+    '7' :['3','0','1','15'],
+    '8' :['15','9','16'],
+    '10' :['4','9','11','18'],
+    '11' :['4','10'],
+    '12' :['5','19','13'],
+    '13' :['6','12'],
+    '14' :['3','2'],
+    '15' :['8','7','1'],
+    '16' :['8','9','17'],
+    '17' :['16','18'],
+    '18' :['10','17'],
+    '19' :['12','4'],
     '9' :['16','8','10','4']
     
     } 
@@ -46,6 +46,7 @@ for i in nueva:
     llave =(F[i])
     llave.sort()
     llave_nueva.append(llave)
+
 #Diccionario ordenado
 clasificar_diccionario = dict(zip(nueva,llave_nueva))
 print(clasificar_diccionario)
@@ -91,9 +92,26 @@ from queue import Queue
 
 class Grafo:
     def __init__(self, m_numero_nodos, dirigido=True):
+        '''
+        Recibe el numero de nodos de nuestra clase principal Grafos. 
+
+        Parametros.
+            m_numero_nodos : int
+                 Numero de nodos 
+            numero_nodos : int
+                Rango de nodos 
+            m_dirigido : boolean
+                Tipo de grafo si es dirigida o no dirigida.
+            m_lista_adyacencia : diccionario
+             Representación gráfica - Lista de adyacencia.
+        '''
+        #Numero de Nodos
         self.m_m_numero_nodos = m_numero_nodos 
+        # Rango de nodos
         self.m_nodos = range(self.m_m_numero_nodos) 
+        # Tipo de grafo si es dirigida o no dirigida
         self.m_dirigido = dirigido
+        # Usamos un directorio de datos para implementar una lista de adyacencia.
         self.m_lista_adyacencia = {nodo: set() for nodo in self.m_nodos}      
 
     def agregar_borde(self, nodo1, nodo2, peso=1):
@@ -115,7 +133,8 @@ class Grafo:
     # Imprimir la representación gráfica
     def Imprimir_lista_adyacencia(self):
         '''
-        Nos imprime la representacion grafica por pantalla el grafo generado nuestra lista de ayacencia.
+        Nos imprime la representacion grafica por pantalla el grafo generado nuestra 
+        lista de ayacencia.
 
         '''
         #Recorre la lista de adyacencia
@@ -153,7 +172,9 @@ class Grafo:
         while not cola.empty():
             # Quitar un vértice de la cola
             nodo_actual = cola.get()
+            #Verifica si el nodo vecino es igual a nuesto nodo objetivo
             if nodo_actual == nodo_objetivo:
+                #
                 camino_encontrado = True
                 break
             # Obtener todos los vértices adyacentes de la cola. 
@@ -180,6 +201,7 @@ B = 6
 def grafo_(A,B): """
 #Creacion del grafo
 grafo = Grafo(20, dirigido=False)
+#Agregamos 20 nodos a nuestro grafo
 # Nodo 1
 grafo.agregar_borde(0, 1)
 grafo.agregar_borde(0, 2)
