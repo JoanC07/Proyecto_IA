@@ -18,8 +18,7 @@ objetivo = {'Gallinas': '0',
  'Ovejas': '0' } 
 
 class prueba(unittest.TestCase):
-    '''
-    Clase prueba 
+    '''Clase prueba 
     metodo prueba_agente
         instanciamos la funcion que se va evaluar
         con la funcion de unittest(parametros para evaluar)
