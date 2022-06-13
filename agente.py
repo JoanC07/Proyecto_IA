@@ -8,6 +8,7 @@ Patos, Ovejas
 Estados: 0->bien alimentado.
          1->mal alimentado.
 '''
+#Creación del diccionario de objetivo que almacena las locaciones y el estado objetivo de cada 1.
 objetivo = {'Gallinas': '0',
  'Perros': '0', 
  'Cerdos': '0',
@@ -17,14 +18,22 @@ objetivo = {'Gallinas': '0',
  'Conejos':'0',
  'Patos': '0',
  'Ovejas': '0' } 
-
-def  Buscar(objetivo):
+#Diccionario vacio para validacion
+objetivo_01={}
+#Función para verificar si el elemento ingresado esta dentro del diccionario
+def verificar_existencia(objetivo_01):
+    T = []#lista vacia
+    if len(objetivo_01)==0:
+        T.append('Diccionario vacio')
+        print('Diccionario vacio')
+    return(T[0])  
+#Función 
+def  Buscar(objetivo): 
     '''
     Función que permite buscar las locaciones y verificar que cumplan 
     con los estados para llegar al objetivo del agente.
     Parametros:
-    Costo:empieza en 0
-    Animal(locación)
+    objetivo
     Estado
     lista[]->lista vacia para agregar los indices del diccionario
     Excepciones:
@@ -72,59 +81,68 @@ def  Buscar(objetivo):
                         Caso contrario:
                             Imprime mensaje sobre los animales que tienen comida
                             Imprime animal alimentado y el costo se mantiene
-    Ejecucion
     '''
-    print('Elementos')
-    print(objetivo)
-    costo = 0 
-    Animal = input("Ingrese el nombre del animal: ") 
-    estado = input("Ingrese el estado del " +Animal+ ": ")
-    lista = []
-    for n in objetivo:
-        lista.append(n) 
-    for n in lista:
-        if Animal ==n:
-            nueva_lista = lista
-            nueva_lista.remove(n)
-            lista_estados=[] 
-            print("Objetivo:" + str(objetivo))
-            for t in nueva_lista:
-                t=input(f'Ingrese el estado de {t}: ')
-                lista_estados.append(t) 
-                lista_nueva = [str(Animal)] +nueva_lista 
-                nuevo_diccionario = dict(zip(lista_nueva, [str(estado)] + lista_estados))
-            print(f"--------- Evaluacion de alimentacion de {n}------")   
-            if estado == '0':
-                print(f'{n} Alimentados ')
-                for animal in lista_nueva:
-                    if  nuevo_diccionario[animal]== '1':
-                        print(f"Los {animal} No tienen comida")
-                        print(f"Se alimentará {animal}")
-                        costo += 1 
-                        print("El costo actual es: " +str(costo))
-                        objetivo[animal] ='0' 
-                        costo += 1 
-                        print(f"se ha vuelto a verificar la comida de {animal}")
-                        print("El costo actual es: "  +str(costo)) 
-                    else: 
-                        print(f"Los {animal} tienen comida")
-                        print(f"{animal} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo))
-            elif estado == '1':
-                print(f'{n} NO Alimentados ')
-                for animal in lista_nueva:     
-                    if  nuevo_diccionario[animal]== '1':
-                        print(f"Los {animal} No tienen comida")
-                        print(f"Se alimentará {animal}") 
-                        costo += 1 
-                        print("El costo actual es: " +str(costo))                   
-                        objetivo[animal] ='0' 
-                        costo += 1 
-                        print(f"se ha vuelto a verificar la comida de {animal}")
-                        print("El costo actual es: "  +str(costo))
-                    else:  
-                        print(f"Los {animal} tienen comida")
-                        print(f"{animal} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo)) #Costo se mantiene  
-            else:
-                print(f'{n} No alimentados ')
-Buscar(objetivo)
+    print('los animales en esta granja son: ')
+    for t in objetivo:
+        print(f'En la granja existen {t}')
+    Animal = input('ingrese nombre de uno de los animales : ')
+    costo = 0
+    if f'{Animal}' in objetivo:
+        print('Este animal si existe')
+        estado = input("Ingrese el estado del " +Animal+ ": ")
+        lista = []
+        for n in objetivo:
+            lista.append(n) 
+        for n in lista:
+            if Animal ==n:
+                nueva_lista = lista
+                nueva_lista.remove(n)
+                lista_estados=[] 
+                for t in nueva_lista:
+                    t=input(f'Ingrese el estado de {t}: ')
+                    lista_estados.append(t) 
+                    lista_nueva = [str(Animal)] +nueva_lista 
+                    nuevo_diccionario = dict(zip(lista_nueva, [str(estado)] + lista_estados))
+                print(f"--------- Evaluacion de alimentacion de {n}------")   
+                if estado == '0':
+                    print(f'{n} Alimentados ')
+                    for animal in lista_nueva:
+                        if  nuevo_diccionario[animal]== '1':
+                            print(f"Los {animal} No tienen comida")
+                            print(f"Se alimentará {animal}")
+                            costo += 1 
+                            print("El costo actual es: " +str(costo))
+                            objetivo[animal] ='0' 
+                            costo += 1 
+                            print(f"se ha vuelto a verificar la comida de {animal}")
+                            print("El costo actual es: "  +str(costo)) 
+                        else: 
+                            print(f"Los {animal} tienen comida")
+                            print(f"{animal} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo))
+                elif estado == '1':
+                    print(f'{n} NO Alimentados ')
+                    for animal in lista_nueva:     
+                        if  nuevo_diccionario[animal]== '1':
+                            print(f"Los {animal} No tienen comida")
+                            print(f"Se alimentará {animal}") 
+                            costo += 1 
+                            print("El costo actual es: " +str(costo))                   
+                            objetivo[animal] ='0' 
+                            costo += 1 
+                            print(f"se ha vuelto a verificar la comida de {animal}")
+                            print("El costo actual es: "  +str(costo))
+                        else:  
+                            print(f"Los {animal} tienen comida")
+                            print(f"{animal} alimentados , no se aumenta costo, este se mantiene en se mantiene en: "  + str(costo)) #Costo se mantiene  
+                else:
+                    print(f'{n} No alimentados ')
+    else :
+        print('Este animal no existe en esta granja ')
+        #costo = 'Este animal no existe'
+        costo = 0
+    return(costo)
+if __name__ == "__main__":
+    Buscar(objetivo)
+    verificar_existencia(objetivo_01)
+
                        
