@@ -44,7 +44,7 @@ nueva.sort() # Ordena la lista con el elemento ingresado
 llave_nueva = [] #nueva llave vacia
 for i in nueva: #Define i como nueva
     llave =(F[i]) #Define la llave como el nuevo del elemento ingresado 
-    llave.sort()
+    llave.sort() 
     llave_nueva.append(llave)
 
 #Diccionario ordenado
@@ -200,14 +200,14 @@ class Grafo:
             dentro de la lista padre y nuestro nodo objetivo.
 
             '''
-            while padre[nodo_objetivo] is not None: #Se agrega a la lista padre
-                camino.append(padre[nodo_objetivo]) 
-                nodo_objetivo = padre[nodo_objetivo] # 
+            while padre[nodo_objetivo] is not None: 
+                camino.append(padre[nodo_objetivo]) #Se agrega a la lista padre
+                nodo_objetivo = padre[nodo_objetivo] # Establece nodo objetivo con el ultimo elemento guardado en la lista a partid del nodo anterior
                 '''
                 Invierte el orden de la lista padre para dejar el ultimo valor 
                 al inicio  y el primero al ultimo
                 '''
-            camino.reverse()
+            camino.reverse() #Invierte el oden de la lista 
         return camino #retorna el camino
 
 def verificar_nodo():
@@ -235,90 +235,90 @@ def grafo_():
     grafo = Grafo(20, dirigido=False)
     #Agregamos 20 nodos a nuestro grafo
     # Nodo 1
-    grafo.agregar_borde(0, 1)
-    grafo.agregar_borde(0, 2)
-    grafo.agregar_borde(0, 3)
-    grafo.agregar_borde(0, 4)
-    grafo.agregar_borde(0, 5)
-    grafo.agregar_borde(0, 7)
+    grafo.agregar_borde(0, 1) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(0, 2) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(0, 3) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(0, 4) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(0, 5) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(0, 7) #Llama a la funcion agregar_borde y añade los bordes
     # Nodo 2
-    grafo.agregar_borde(1, 0)
-    grafo.agregar_borde(1, 7)
-    grafo.agregar_borde(1, 9)
-    grafo.agregar_borde(1, 15)
+    grafo.agregar_borde(1, 0) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(1, 7) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(1, 9) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(1, 15) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 3
-    grafo.agregar_borde(2, 0)
-    grafo.agregar_borde(2, 5)
-    grafo.agregar_borde(2, 6)
-    grafo.agregar_borde(2, 14)
+    grafo.agregar_borde(2, 0) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(2, 5) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(2, 6) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(2, 14) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 4
-    grafo.agregar_borde(3, 0)
-    grafo.agregar_borde(3, 7)
-    grafo.agregar_borde(3, 14)
+    grafo.agregar_borde(3, 0) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(3, 7) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(3, 14) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 5
-    grafo.agregar_borde(4, 0)
-    grafo.agregar_borde(4, 5)
-    grafo.agregar_borde(4, 9)
-    grafo.agregar_borde(4, 10)
-    grafo.agregar_borde(4, 11)
-    grafo.agregar_borde(4, 19)
+    grafo.agregar_borde(4, 0) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(4, 5) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(4, 9) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(4, 10) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(4, 11) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(4, 19) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 6
-    grafo.agregar_borde(5, 0)
-    grafo.agregar_borde(5, 2)
-    grafo.agregar_borde(5, 4)
-    grafo.agregar_borde(5, 12)
+    grafo.agregar_borde(5, 0) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(5, 2) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(5, 4) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(5, 12) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 7
-    grafo.agregar_borde(6, 2)
-    grafo.agregar_borde(6, 13)
+    grafo.agregar_borde(6, 2) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(6, 13) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 8
-    grafo.agregar_borde(7, 0)
-    grafo.agregar_borde(7, 1)
-    grafo.agregar_borde(7, 3)
-    grafo.agregar_borde(7, 15)
+    grafo.agregar_borde(7, 0) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(7, 1) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(7, 3) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(7, 15) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 9
-    grafo.agregar_borde(8, 9)
-    grafo.agregar_borde(8, 15)
-    grafo.agregar_borde(8, 16)
+    grafo.agregar_borde(8, 9) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(8, 15) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(8, 16) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 10
-    grafo.agregar_borde(9, 4)
-    grafo.agregar_borde(9, 8)
-    grafo.agregar_borde(9, 10)
-    grafo.agregar_borde(9, 16)
+    grafo.agregar_borde(9, 4) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(9, 8) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(9, 10) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(9, 16) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 11
-    grafo.agregar_borde(10,4)
-    grafo.agregar_borde(10,9) 
-    grafo.agregar_borde(10,11)
-    grafo.agregar_borde(10,18)
+    grafo.agregar_borde(10,4) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(10,9) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(10,11) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(10,18) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 12
-    grafo.agregar_borde(11,4)
-    grafo.agregar_borde(11,10) 
+    grafo.agregar_borde(11,4) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(11,10) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 13
-    grafo.agregar_borde(12,5)
-    grafo.agregar_borde(12,13) 
-    grafo.agregar_borde(12,19)
+    grafo.agregar_borde(12,5) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(12,13)  #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(12,19) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 14
-    grafo.agregar_borde(13,6)
-    grafo.agregar_borde(13,12) 
+    grafo.agregar_borde(13,6) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(13,12) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 15
-    grafo.agregar_borde(14,2)
-    grafo.agregar_borde(14,3) 
+    grafo.agregar_borde(14,2) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(14,3) #Llama a la funcion agregar_borde y añade los bordes 
     #Nodo 16
-    grafo.agregar_borde(15,1)
-    grafo.agregar_borde(15,7) 
-    grafo.agregar_borde(15,8)
+    grafo.agregar_borde(15,1) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(15,7) #Llama a la funcion agregar_borde y añade los bordes 
+    grafo.agregar_borde(15,8) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 17
-    grafo.agregar_borde(16,8)
-    grafo.agregar_borde(16,9) 
-    grafo.agregar_borde(16,17)
+    grafo.agregar_borde(16,8) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(16,9) #Llama a la funcion agregar_borde y añade los bordes 
+    grafo.agregar_borde(16,17) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 18
-    grafo.agregar_borde(17,16)
-    grafo.agregar_borde(17,18)
+    grafo.agregar_borde(17,16) #Llama a la funcion agregar_borde y añade los bordes
+    grafo.agregar_borde(17,18) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 19 
-    grafo.agregar_borde(18,10) 
-    grafo.agregar_borde(18,17)
+    grafo.agregar_borde(18,10) #Llama a la funcion agregar_borde y añade los bordes 
+    grafo.agregar_borde(18,17) #Llama a la funcion agregar_borde y añade los bordes
     #Nodo 20
-    grafo.agregar_borde(19,4) 
-    grafo.agregar_borde(19,12)  
+    grafo.agregar_borde(19,4) #Llama a la funcion agregar_borde y añade los bordes 
+    grafo.agregar_borde(19,12) #Llama a la funcion agregar_borde y añade los bordes  
     #Imprime nuestra lista de adyacencia
     #grafo.Imprimir_lista_adyacencia()
     #Ingreso de los nodos a llegar
@@ -327,7 +327,7 @@ def grafo_():
 
     camino = grafo.bfs(A,B)
     #Nos imprime la ruta mas corta
-    print(f'el camino mas  corto de {A} hacia {B} es : ')
+    print(f'el camino mas  corto de {A} hacia {B} es : ') #
     print(camino) #Imprime la variable
     return(camino)  # Retorna camino del grafo
 

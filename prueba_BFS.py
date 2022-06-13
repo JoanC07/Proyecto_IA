@@ -4,7 +4,7 @@ Nos permite realizar pruebas unitarias sin mucho esfuerzo
 '''
 import  unittest 
 #Enlazamos con el .py a realizar las pruebas unitarias
-from BFS import grafo_ , verificar_nodo
+from BFS import grafo_ , verificar_nodo #Importamos las dos funciones
 '''
 Comprueba una respuesta específica a un conjunto particular de entradas. 
 unittest proporciona una clase base.
