@@ -16,7 +16,7 @@ class check(unittest.TestCase): #Clase Cheak
     #Probamos el grafo ingresado manualmente del py BFS
     def test_grafo(self): #Sentencia para el test
         grafo = grafo_() #Verificacion del grafo
-        self.assertEqual(grafo ,[1, 0, 2, 6])#Recorrido a esperar
+        self.assertEqual(grafo ,[1, 0, 2, 7])#Recorrido a esperar
     
     #Revisamos si los nodos estan dentro del rango 
     def test_verficacion(self): #Sentencia para el test
