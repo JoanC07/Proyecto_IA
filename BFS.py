@@ -10,7 +10,7 @@ import networkx as nx
 Codigo semi dinamico, tenemos un diccionario de datos 
 Pasamos de letras a numeros.
 '''
-F = {
+F = { #Diccionario de datos
     '0' :['1','2','4','7','3','5'],
     '1' :['0','7','15','9'],
     '2' :['0','5','6','14'],
@@ -36,14 +36,14 @@ F = {
 '''
 Bucles para ordenar nuestro diccionario
 '''
-nueva = []
-for n in  F:
-    nueva.append(n)
-nueva.sort()
+nueva = [] #Nueva lista vacia
+for n in  F: #Definimos nuestro diccionario como n
+    nueva.append(n) #Agrega n en nueva
+nueva.sort() # Ordena la lista con el elemento ingresado
 
-llave_nueva = []
-for i in nueva:
-    llave =(F[i])
+llave_nueva = [] #nueva llave vacia
+for i in nueva: #Define i como nueva
+    llave =(F[i]) #Define la llave como el nuevo del elemento ingresado 
     llave.sort()
     llave_nueva.append(llave)
 
@@ -175,7 +175,7 @@ class Grafo:
             nodo_actual = cola.get()
             #Verifica si el nodo vecino es igual a nuesto nodo objetivo
             if nodo_actual == nodo_objetivo:
-                #
+                #Verificamos si el camino esta encontrado
                 camino_encontrado = True
                 break
             # Obtener todos los vértices adyacentes de la cola. 
@@ -192,7 +192,7 @@ class Grafo:
         Se añade el nodos a nuestro camino
         Nodo se debe encontrar en la lista padre y que no este marcado.
         '''
-        camino = []
+        camino = [] #Camino en lista vacia
         if camino_encontrado:
             camino.append(nodo_objetivo)
             '''
@@ -200,35 +200,35 @@ class Grafo:
             dentro de la lista padre y nuestro nodo objetivo.
 
             '''
-            while padre[nodo_objetivo] is not None:
+            while padre[nodo_objetivo] is not None: #Se agrega a la lista padre
                 camino.append(padre[nodo_objetivo]) 
-                nodo_objetivo = padre[nodo_objetivo]
+                nodo_objetivo = padre[nodo_objetivo] # 
                 '''
                 Invierte el orden de la lista padre para dejar el ultimo valor 
                 al inicio  y el primero al ultimo
                 '''
             camino.reverse()
-        return camino
+        return camino #retorna el camino
 
 def verificar_nodo():
     
-    A = int(input('Ingrese el Nodo A: '))
-    B = int(input('Ingrese el Nodo B: '))
-    T =[]
-    if A>20:
-        G = 'Nodo A fuera de rango'
-        print(G)
-        T.append(G)
-    elif B > 20:
-        G = 'Nodo B fuera de rango'
-        print(G)
-        T.append(G)   
+    A = int(input('Ingrese el Nodo A: ')) #Imprime el nodo A
+    B = int(input('Ingrese el Nodo B: ')) #Imprime el nodo B
+    T =[] #T como vacio donde se guarda el mensaje
+    if A>20: # Condicional si A es mayor que 20
+        G = 'Nodo A fuera de rango' # Nos retorna A fuera de rango
+        print(G) #Imprime el mensaje en G
+        T.append(G) #Guarda el mensaje
+    elif B > 20: # Condicional si A es mayor que 20
+        G = 'Nodo B fuera de rango'  # Nos retorna A fuera de rango
+        print(G) #Imprime el mensaje en G
+        T.append(G) #Guarda el mensaje  
     else:
-        G = 'Nodos dentro rango'
-        print(G)
+        G = 'Nodos dentro rango' #Caso contrario esta dentro del rango
+        print(G) #Imprime el mensaje en G
         T.append(G) 
         
-    return(T[0])
+    return(T[0]) #Retorna nuestro mensaje
 
 def grafo_(): 
     #Creacion del grafo
@@ -322,16 +322,16 @@ def grafo_():
     #Imprime nuestra lista de adyacencia
     #grafo.Imprimir_lista_adyacencia()
     #Ingreso de los nodos a llegar
-    A = int(input('Escriba el Nodo Incial: '))
-    B = int(input('Escriba el Nodo Final: '))
+    A = int(input('Escriba el Nodo Incial: ')) # Se escribe el nodo inicial 
+    B = int(input('Escriba el Nodo Final: ')) # Se escribe nuestro nodo objetivo
 
     camino = grafo.bfs(A,B)
     #Nos imprime la ruta mas corta
     print(f'el camino mas  corto de {A} hacia {B} es : ')
-    print(camino)
-    return(camino)
+    print(camino) #Imprime la variable
+    return(camino)  # Retorna camino del grafo
 
 if __name__ =="__main__":
     
-    grafo_() 
-    verificar_nodo()
+    grafo_() #Para vailidar en test si el recorrido es el correcto
+    verificar_nodo() #Para vailidar en nodo es correcto
