@@ -10,7 +10,7 @@ import networkx as nx
 Codigo semi dinamico, tenemos un diccionario de datos 
 Pasamos de letras a numeros.
 '''
-F = {
+F = { #Diccionario de datos
     '0' :['1','2','4','7','3','5'],
     '1' :['0','7','15','9'],
     '2' :['0','5','6','14'],
@@ -38,12 +38,12 @@ Bucles para ordenar nuestro diccionario
 '''
 nueva = [] #Nueva lista vacia
 for n in  F: #Definimos nuestro diccionario como n
-    nueva.append(n)
-nueva.sort()
+    nueva.append(n) #Agrega n en nueva
+nueva.sort() # Ordena la lista con el elemento ingresado
 
 llave_nueva = [] #nueva llave vacia
-for i in nueva: 
-    llave =(F[i])
+for i in nueva: #Define i como nueva
+    llave =(F[i]) #Define la llave como el nuevo del elemento ingresado 
     llave.sort()
     llave_nueva.append(llave)
 
@@ -214,21 +214,21 @@ def verificar_nodo():
     
     A = int(input('Ingrese el Nodo A: ')) #Imprime el nodo A
     B = int(input('Ingrese el Nodo B: ')) #Imprime el nodo B
-    T =[] #T como vacio
+    T =[] #T como vacio donde se guarda el mensaje
     if A>20: # Condicional si A es mayor que 20
         G = 'Nodo A fuera de rango' # Nos retorna A fuera de rango
         print(G) #Imprime el mensaje en G
-        T.append(G)
+        T.append(G) #Guarda el mensaje
     elif B > 20: # Condicional si A es mayor que 20
         G = 'Nodo B fuera de rango'  # Nos retorna A fuera de rango
         print(G) #Imprime el mensaje en G
-        T.append(G)   
+        T.append(G) #Guarda el mensaje  
     else:
         G = 'Nodos dentro rango' #Caso contrario esta dentro del rango
         print(G) #Imprime el mensaje en G
         T.append(G) 
         
-    return(T[0]) #Retorna nuestra lista
+    return(T[0]) #Retorna nuestro mensaje
 
 def grafo_(): 
     #Creacion del grafo
