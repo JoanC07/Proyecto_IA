@@ -162,7 +162,7 @@ def  Buscar(objetivo):
         print('Este animal no existe en esta granja, intente otra vez')#indica mensaje que animal ingresado no esta en el diccionario que lo intente de nuevo
         #costo = 'Este animal no existe'
         costo = 0#el costo sigue en 0
-    return(costo)#retorna el costo
+    return(costo,estado)#retorna el costo
 if __name__ == "__main__":#clase main
     Buscar(objetivo)#llama a la función buscar
     verificar_existencia(objetivo_01)#llama a la funcion para verificar la existencia
