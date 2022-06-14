@@ -10,57 +10,15 @@ import networkx as nx
 Codigo semi dinamico, tenemos un diccionario de datos 
 Pasamos de letras a numeros.
 '''
-F = { #Diccionario de datos
-    '0' :['1','2','4','7','3','5'],
-    '1' :['0','7','15','9'],
-    '2' :['0','5','6','14'],
-    '3' :['0','14','7'],
-    '4' :['0','5','19','11','10','9'],
-    '5' :['0','2','12','4'],
-    '6' :['2','13'],
-    '7' :['3','0','1','15'],
-    '8' :['15','9','16'],
-    '10' :['4','9','11','18'],
-    '11' :['4','10'],
-    '12' :['5','19','13'],
-    '13' :['6','12'],
-    '14' :['3','2'],
-    '15' :['8','7','1'],
-    '16' :['8','9','17'],
-    '17' :['16','18'],
-    '18' :['10','17'],
-    '19' :['12','4'],
-    '9' :['16','8','10','4']
-    
-    } 
-'''
-Bucles para ordenar nuestro diccionario
-'''
-nueva = [] #Nueva lista vacia
-for n in  F: #Definimos nuestro diccionario como n
-    nueva.append(n) #Agrega n en nueva
-nueva.sort() # Ordena la lista con el elemento ingresado
 
-llave_nueva = [] #nueva llave vacia
-for i in nueva: #Define i como nueva
-    llave =(F[i]) #Define la llave como el nuevo del elemento ingresado 
-    llave.sort() 
-    llave_nueva.append(llave)
-
-#Diccionario ordenado
-clasificar_diccionario = dict(zip(nueva,llave_nueva))
-print(clasificar_diccionario)
-#Creacion de la clase T mediante la funcion del grafo
-T = nx.Graph(clasificar_diccionario)
-#Graficamos el grafo
-nx.draw_networkx(T)
-#Imprimimos nuestro grafo
-plt.plot
 '''
 Importamos Queue
 '''
 from queue import Queue
-'''
+
+
+class Grafo:
+    '''
     Clase Grafo la cual nos va a representar a nuestro Grafo.
 
     ...
@@ -90,7 +48,6 @@ from queue import Queue
 
     '''
 
-class Grafo:
     def __init__(self, m_numero_nodos, dirigido=True):
         '''
         Recibe el numero de nodos de nuestra clase principal Grafos. 
@@ -332,6 +289,52 @@ def grafo_():
     return(camino)  # Retorna camino del grafo
 
 if __name__ =="__main__":
+    F = { #Diccionario de datos
+    '0' :['1','2','4','7','3','5'],
+    '1' :['0','7','15','9'],
+    '2' :['0','5','6','14'],
+    '3' :['0','14','7'],
+    '4' :['0','5','19','11','10','9'],
+    '5' :['0','2','12','4'],
+    '6' :['2','13'],
+    '7' :['3','0','1','15'],
+    '8' :['15','9','16'],
+    '10' :['4','9','11','18'],
+    '11' :['4','10'],
+    '12' :['5','19','13'],
+    '13' :['6','12'],
+    '14' :['3','2'],
+    '15' :['8','7','1'],
+    '16' :['8','9','17'],
+    '17' :['16','18'],
+    '18' :['10','17'],
+    '19' :['12','4'],
+    '9' :['16','8','10','4']
     
-    grafo_() #Para vailidar en test si el recorrido es el correcto
-    verificar_nodo() #Para vailidar en nodo es correcto
+    } 
+'''
+Bucles para ordenar nuestro diccionario
+'''
+nueva = [] #Nueva lista vacia
+for n in  F: #Definimos nuestro diccionario como n
+    nueva.append(n) #Agrega n en nueva
+nueva.sort() # Ordena la lista con el elemento ingresado
+
+llave_nueva = [] #nueva llave vacia
+for i in nueva: #Define i como nueva
+    llave =(F[i]) #Define la llave como el nuevo del elemento ingresado 
+    llave.sort() 
+    llave_nueva.append(llave)
+
+#Diccionario ordenado
+clasificar_diccionario = dict(zip(nueva,llave_nueva))
+print(clasificar_diccionario)
+#Creacion de la clase T mediante la funcion del grafo
+T = nx.Graph(clasificar_diccionario)
+#Graficamos el grafo
+nx.draw_networkx(T)
+#Imprimimos nuestro grafo
+plt.plot
+grafo_() #Para vailidar en test si el recorrido es el correcto
+verificar_nodo() #Para vailidar en nodo es correcto
+    
