@@ -111,7 +111,13 @@ def  Buscar(objetivo):
     costo = 0 #inicializa el costo en 0
     if f'{Animal}' in objetivo: #evalua si el animal ingresado se encuentra en el diccionario
         print('Este animal si existe')#mensaje que indica que el animal ingresado existe
-        estado = input("Ingrese el estado del " +Animal+ ": ")#pide que ingrese el estado del animal ingresado
+        estado = int(input("Ingrese el estado del " +Animal+ ":\n "))#pide que ingrese el estado del animal ingresado
+
+        while estado<0 or estado>1:
+            print(f'Ingrese nuevamente el estado de {Animal} ')
+            
+            estado = int(input('\nEscriba 1 si esta mal alimentado o 0 si esta bien alimentado: '))
+        estado  = str(estado)
         lista = []#lista vacia para agregar los indices del diccionario
         for n in objetivo:#Recorre buscando si n esta en el diccionario objetivo
             lista.append(n) #agrega n a lista vacia
@@ -121,8 +127,15 @@ def  Buscar(objetivo):
                 nueva_lista.remove(n)#si esta repetido lo elimina
                 lista_estados=[] #lista para ir añadiendo los estados 
                 for t in nueva_lista:#evalua t en la nueva lista 
-                    t=input(f'Ingrese el estado de {t}: ') #indica y pide que ingre el estado de t que es un animal que va recorriendo
-                    lista_estados.append(t) #Agrega y guarda t en la lista de estados
+
+                    A=int(input(f'Ingrese el estado de {t}:\n '))
+                   
+                    while A<0 or A>1:
+                        print(f'Ingrese nuevamente el estado de {t}')
+                        A = int(input('\nEscriba 1 si esta mal alimentado o 0 si esta bien alimentado: '))
+                    A = str(A)   
+
+                    lista_estados.append(A) #Agrega y guarda t en la lista de estados
                     lista_nueva = [str(Animal)] +nueva_lista #indica que lista nueva es el animal ingresado y la nueva lista
                     nuevo_diccionario = dict(zip(lista_nueva, [str(estado)] + lista_estados))#creamos un nuevo dicionario con los animales y los estados que hemos agregado en cada input
                 print(f"--------- Evaluacion de alimentacion de {n}------")   #evaluacion de la alimentacion
@@ -160,9 +173,9 @@ def  Buscar(objetivo):
                     print(f'{n} No alimentados ')#imprime que el animal no esta alimentado
     else :#casocontrario
         print('Este animal no existe en esta granja, intente otra vez')#indica mensaje que animal ingresado no esta en el diccionario que lo intente de nuevo
-        #costo = 'Este animal no existe'
-        costo = 0#el costo sigue en 0
-    return(costo,estado)#retorna el costo
+        costo = 'Este animal no existe'
+        #costo = 0#el costo sigue en 0
+    return(costo)#retorna el costo
 if __name__ == "__main__":#clase main
     Buscar(objetivo)#llama a la función buscar
     verificar_existencia(objetivo_01)#llama a la funcion para verificar la existencia
