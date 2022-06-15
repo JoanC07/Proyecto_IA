@@ -33,10 +33,11 @@ class prueba(unittest.TestCase):
     def test_costo_0(self):# procedimiento para Test diccionario vacio
         t = verificar_existencia(objetivo_1)#instancia la funcción a evaluarP
         self.assertEqual(t, 'Diccionario vacio')#indica los parametros que van a evalua
-        
+
     def test_estado(self):
         g= Buscar(objetivo)
         self.assertEqual(g,1)
+        
 if __name__ == "__main__":
     unittest.main()
     
