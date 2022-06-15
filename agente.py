@@ -112,10 +112,8 @@ def  Buscar(objetivo):
     if f'{Animal}' in objetivo: #evalua si el animal ingresado se encuentra en el diccionario
         print('Este animal si existe')#mensaje que indica que el animal ingresado existe
         estado = int(input("Ingrese el estado del " +Animal+ ":\n "))#pide que ingrese el estado del animal ingresado
-
-        while estado<0 or estado>1:
-            print(f'Ingrese nuevamente el estado de {Animal} ')
-            
+        while estado<0 or estado>1: #Evalua estado
+            print(f'Ingrese nuevamente el estado de {Animal} ')#pide que ingrese estado
             estado = int(input('\nEscriba 1 si esta mal alimentado o 0 si esta bien alimentado: '))
         estado  = str(estado)
         lista = []#lista vacia para agregar los indices del diccionario
@@ -127,14 +125,11 @@ def  Buscar(objetivo):
                 nueva_lista.remove(n)#si esta repetido lo elimina
                 lista_estados=[] #lista para ir añadiendo los estados 
                 for t in nueva_lista:#evalua t en la nueva lista 
-
-                    A=int(input(f'Ingrese el estado de {t}:\n '))
-                   
-                    while A<0 or A>1:
-                        print(f'Ingrese nuevamente el estado de {t}')
-                        A = int(input('\nEscriba 1 si esta mal alimentado o 0 si esta bien alimentado: '))
+                    A=int(input(f'Ingrese el estado de {t}:\n '))#Solicita que ingrese el estado
+                    while A<0 or A>1:#va comprobando si el estado es 1 o 0
+                        print(f'Ingrese nuevamente el estado de {t}')#pide ingresar estado
+                        A = int(input('\nEscriba 1 si esta mal alimentado o 0 si esta bien alimentado: '))#imprime mensaje
                     A = str(A)   
-
                     lista_estados.append(A) #Agrega y guarda t en la lista de estados
                     lista_nueva = [str(Animal)] +nueva_lista #indica que lista nueva es el animal ingresado y la nueva lista
                     nuevo_diccionario = dict(zip(lista_nueva, [str(estado)] + lista_estados))#creamos un nuevo dicionario con los animales y los estados que hemos agregado en cada input
