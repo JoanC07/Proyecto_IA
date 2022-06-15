@@ -7,16 +7,9 @@ y networks.
 import matplotlib.pyplot as plt
 import networkx as nx
 '''
-Codigo semi dinamico, tenemos un diccionario de datos 
-Pasamos de letras a numeros.
-'''
-
-'''
 Importamos Queue
 '''
 from queue import Queue
-
-
 class Grafo:
     '''
     Clase Grafo la cual nos va a representar a nuestro Grafo.
@@ -34,7 +27,6 @@ class Grafo:
         m_lista_adyacencia : diccionario
             Representación gráfica - Lista de adyacencia.
     Establecimiento de los parametros para el metodo constructor (inicializado)
-
     Métodos
     ------- 
         Agregar_borde(self, nodo1, nodo2, peso=1):
@@ -45,13 +37,12 @@ class Grafo:
             Recibe el numero de nodos y rango y verifica si es dirigido o no
         bfs(nodo_inicial):
             Imprimir el recorrido BFS de un vértice fuente dado.
-
+    Retorna
+    -------
     '''
-
     def __init__(self, m_numero_nodos, dirigido=True):
         '''
         Recibe el numero de nodos de nuestra clase principal Grafos. 
-
         Parametros.
             m_numero_nodos : int
                  Numero de nodos 
@@ -61,6 +52,7 @@ class Grafo:
                 Tipo de grafo si es dirigida o no dirigida.
             m_lista_adyacencia : diccionario
              Representación gráfica - Lista de adyacencia.
+        Retorna:
         '''
         #Numero de Nodos
         self.m_m_numero_nodos = m_numero_nodos 
@@ -82,6 +74,10 @@ class Grafo:
             nodo2: int
             peso: int
             Peso y se agregan a nuestra lista de adyacencia con el nodo que corresponde.
+        Excepciones
+        Evalua: Si (es NO dirigido)
+            Agrega nodo1 y el peso a lista de adyacencia en nodo2
+        Retorna:
         '''
         #Agrega el nodo 1 a nuestra lista del nodo 2
         if not self.m_dirigido:
@@ -92,7 +88,10 @@ class Grafo:
         '''
         Nos imprime la representacion grafica por pantalla el grafo generado nuestra 
         lista de ayacencia.
-
+        Excepciones:
+        Recorre por la lista de adyacencia
+            Imprime el nodo
+        Retorna
         '''
         #Recorre la lista de adyacencia
         for llave in self.m_lista_adyacencia.keys():
@@ -105,14 +104,15 @@ class Grafo:
         recorre los vértices alcanzables desde s.
         Genera una lista de las colas visitadas y muestra el recorrido realizado, recibe el 
         valor de nodo_de_inicio.
-
-         Añade el nodo_de_inicio a la cola y a la lista de visitas.
-
+        Añade el nodo_de_inicio a la cola y a la lista de visitas.
+        Excepciones
         Bucle de los nodos.
             Quitar un vértice de la cola.
             Imprimirlo vertice.
             Obtener todos los vértices adyacentes del vértice de la cola. 
             Si un vértice adyacente ha sido visitado, entonces se marca como visitado y pongalo en cola.
+        Retorna:
+        camino
         '''
 
         # Conjunto de nodos visitados para evitar bucles
@@ -168,6 +168,26 @@ class Grafo:
         return camino #retorna el camino
 
 def verificar_nodo():
+    '''
+    Funcion  que me permite verificar si los nods que se ingresen esten dentro del rango
+    Parametros:
+    Excepciones:
+    Evalua si A>20
+        Nos retorna A fuera de rango
+        Imprime el mensaje en G
+        Guarda el mensaje
+    caso contrario:
+    Evalua: B > 20
+        Nos retorna B fuera de rango
+        Imprime el mensaje en G
+        Guarda el mensaje
+    caso contrario:
+        Caso contrario G esta dentro del rango
+        Imprime el mensaje en G
+        Guarda el mensaje
+    Retorna:
+    T[0]
+    '''
     
     A = int(input('Ingrese el Nodo A: ')) #Imprime el nodo A
     B = int(input('Ingrese el Nodo B: ')) #Imprime el nodo B
@@ -187,7 +207,18 @@ def verificar_nodo():
         
     return(T[0]) #Retorna nuestro mensaje
 
-def grafo_(): 
+def grafo_():
+    '''
+    Funcion para agregar los bordes instanciando a la clase grafo y llamando a la funcion para agregar los bordes
+    Parametros:ninguno
+    Excepciones:ninguna
+    Instancia la clase grafo
+    Agregamos 20 nodos a nuestro grafo: Llama a la funcion agregar_borde y añade los bordes
+    Ingreso de los nodos a llegar
+    Nos imprime la ruta mas corta
+    Retorna:
+    camino
+    ''' 
     #Creacion del grafo
     grafo = Grafo(20, dirigido=False)
     #Agregamos 20 nodos a nuestro grafo
@@ -289,6 +320,9 @@ def grafo_():
     return(camino)  # Retorna camino del grafo
 
 if __name__ =="__main__":
+    '''
+    Clase principal 
+    '''
     F = { #Diccionario de datos
     '0' :['1','2','4','7','3','5'],
     '1' :['0','7','15','9'],
@@ -325,7 +359,6 @@ for i in nueva: #Define i como nueva
     llave =(F[i]) #Define la llave como el nuevo del elemento ingresado 
     llave.sort() 
     llave_nueva.append(llave)
-
 #Diccionario ordenado
 clasificar_diccionario = dict(zip(nueva,llave_nueva))
 print(clasificar_diccionario)
