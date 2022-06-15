@@ -1,7 +1,7 @@
 
 '''
 Importacion de librerias para prueba unitarias
-de archivo py correspondiente al agente
+de archivo py correspondiente al agente y a verificar_existencia
 Crea dicionarios para evaluar la funcion Buscar
 '''
 import  unittest 
@@ -19,12 +19,19 @@ objetivo = {'Gallinas': '0',
 objetivo_1 = {}
 class prueba(unittest.TestCase):
     '''Clase prueba 
+    Parametros:
+    unittest.TestCase
+    Procedimientos:
     Procedimiento test_agente
         instanciamos la funcion que se va evaluar
         con la funcion de unittest(parametros para evaluar)
     Procedimiento test_costo_0
         instanciamos la funcion que se va evaluar
         Se le añaden parametro de evaluacion y verifica
+    Procedimiento test_estado
+        instanciamos la funcion que se va evaluar
+        Se le añaden parametro de evaluacion y verifica
+    Retorna: Ninguno
     '''   
     def test_agente(self):#procedimeinto para realizar el test del agente con la medida de optimizacion
         g = Buscar(objetivo)#instancia la funcción a evaluar
@@ -34,9 +41,9 @@ class prueba(unittest.TestCase):
         t = verificar_existencia(objetivo_1)#instancia la funcción a evaluarP
         self.assertEqual(t, 'Diccionario vacio')#indica los parametros que van a evalua
 
-    def test_estado(self):
-        g= Buscar(objetivo)
-        self.assertEqual(g,1)
+    def test_estado(self):#procedimeinto para evaluar los estados 
+        g= Buscar(objetivo)#instancia la funcción a evaluar
+        self.assertEqual(g,1)#indica los parametros que van a evaluarse
         
 if __name__ == "__main__":
     unittest.main()
